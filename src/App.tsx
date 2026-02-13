@@ -2,12 +2,12 @@ import React, { Suspense } from 'react';
 import { useRoutes, Link } from 'react-router-dom';
 import { useSelector, shallowEqual, useDispatch } from 'react-redux';
 import routes from './router';
-import store, { useAppSelector } from './store';
+import store, { useAppSelector, useAppDispatch } from './store';
 import { changeMessageAction } from './store/modules/counter';
 
 function App() {
   const { count, message } = useAppSelector((state) => state.counter, shallowEqual)
-  const dispatch = useDispatch()
+  const dispatch = useAppDispatch()
   const handleChangeMessage = () => {
     dispatch(changeMessageAction("hello redux2"))
   }
