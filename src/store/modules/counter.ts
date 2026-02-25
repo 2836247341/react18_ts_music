@@ -1,10 +1,10 @@
-import { createSlice } from "@reduxjs/toolkit"
+import { createSlice } from '@reduxjs/toolkit'
 
 const counterSlice = createSlice({
-  name: "counter",
+  name: 'counter',
   initialState: {
     count: 100,
-    message: "hello redux"
+    message: 'hello redux'
   },
   reducers: {
     changeMessageAction(state, { payload }) {
