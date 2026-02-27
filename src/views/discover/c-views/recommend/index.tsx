@@ -2,6 +2,7 @@ import React, { memo, useEffect } from 'react'
 import type { ReactNode, FC } from 'react'
 import { useAppDispatch } from '@/store'
 import { fetchBannerDataAction } from './store/recommend'
+import TopBanner from './c-cpns/top-banner'
 interface IProps {
   children?: ReactNode
 }
@@ -12,7 +13,11 @@ const Recommend: FC<IProps> = () => {
     dispatch(fetchBannerDataAction())
   }, [])
 
-  return <div>Recommend</div>
+  return (
+    <div>
+      <TopBanner />
+    </div>
+  )
 }
 
 export default memo(Recommend)
