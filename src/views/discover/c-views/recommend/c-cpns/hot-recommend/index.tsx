@@ -10,7 +10,7 @@ interface IProps {
 }
 
 const HotRecommend: FC<IProps> = () => {
-  const { hotRecommend } = useAppSelector(state => state.recommend, shallowEqualApp)
+  const { hotRecommends } = useAppSelector(state => state.recommend, shallowEqualApp)
   return (
     <HotRecommendWrapper>
       <AreaHeaderV1 
@@ -21,7 +21,7 @@ const HotRecommend: FC<IProps> = () => {
       />
       <div className="recommend-list">
         {
-          hotRecommend.map(item => {
+          hotRecommends.map(item => {
             return <SongMenuItem key={item.id} itemData={item} />
           })
         }
